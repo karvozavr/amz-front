@@ -70,7 +70,7 @@
         methods: {
             findByAsin() {
                 this.tableItems = [];
-                axios.get(`http://localhost:8080/api/${this.asin}?page=${this.currentPage-1}&size=${this.perPage}`)
+                axios.get(`https://amz-keyword-api.herokuapp.com/api/${this.asin}?page=${this.currentPage-1}&size=${this.perPage}`)
                     .then(response => {
                         this.rows = response.data.totalElements;
                         this.tableItems = response.data.content;
