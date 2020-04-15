@@ -42,8 +42,8 @@
 
         methods: {
             findByAsin() {
-                const url = 'https://amz-keyword-api.herokuapp.com'
-                // const url = 'http://localhost:8080'
+                // const url = 'https://amz-keyword-api.herokuapp.com'
+                const url = 'http://198.211.98.28:8080'
                 axios.get(`${url}/api/keyword/${this.asin}`)
                     .then(response => {
                         this.data = response.data;

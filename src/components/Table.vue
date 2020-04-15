@@ -70,8 +70,8 @@
         methods: {
             findByAsin() {
                 this.tableItems = [];
-                const url = 'https://amz-keyword-api.herokuapp.com'
-                // const url = 'http://localhost:8080'
+                // const url = 'https://amz-keyword-api.herokuapp.com'
+                const url = 'http://198.211.98.28:8080'
                 axios.get(`${url}/api/asin/${this.asin}?page=${this.currentPage-1}&size=${this.perPage}`)
                     .then(response => {
                         this.rows = response.data.totalElements;
