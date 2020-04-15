@@ -1,28 +1,31 @@
 <template>
-  <div id="app">
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <Table/>
-  </div>
+    <div id="app">
+        <div class="nav">
+            <router-link class="nav-link" to="/asin">ASIN</router-link>
+            <router-link class="nav-link" to="/keywords">KEYWORDS</router-link>
+        </div>
+        <router-view/>
+    </div>
 </template>
 
 <script>
-import Table from './components/Table.vue'
 
-export default {
-  name: 'App',
-  components: {
-      Table
-  }
-}
+
+    export default {
+        name: 'App',
+        components: {
+
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 </style>
