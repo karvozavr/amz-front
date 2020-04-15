@@ -63,7 +63,7 @@
                 ],
                 currentPage: 1,
                 rows: 0,
-                perPage: 5,
+                perPage: 50,
             }
         },
 
