@@ -48,7 +48,7 @@
         data() {
             return {
                 asin: '',
-                tableItems: [],
+                tableItems: [{keyword: "Нет данных", count: ""}],
                 fields: [
                     {
                         key: 'keyword',
@@ -69,7 +69,7 @@
 
         methods: {
             findByAsin() {
-                this.tableItems = [];
+                this.tableItems = [{keyword: "Нет данных", count: ""}];
                 // const url = 'https://amz-keyword-api.herokuapp.com'
                 const url = 'http://198.211.98.28:8080'
                 axios.get(`${url}/api/asin/${this.asin}?page=${this.currentPage-1}&size=${this.perPage}`)
