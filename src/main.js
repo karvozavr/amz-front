@@ -3,7 +3,7 @@ import BootstrapVue from 'bootstrap-vue';
 import IconsPlugin from 'bootstrap-vue';
 import Router from 'vue-router'
 import App from './App.vue'
-import Table from './components/Table'
+import SearchByAsin from './components/SearchByAsin'
 import Keywords from './components/Keywords'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
