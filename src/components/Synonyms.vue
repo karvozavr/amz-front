@@ -151,12 +151,40 @@
 
                 languageFilters: [
                     {
-                        text: 'EN',
-                        value: 1
+                        text: 'ENG',
+                        value: 'ENG'
                     },
                     {
-                        text: 'FR',
-                        value: 2,
+                        text: 'FRA',
+                        value: 'FRA',
+                    },
+                    {
+                        text: 'DEU',
+                        value: 'DEU',
+                    },
+                    {
+                        text: 'SPA',
+                        value: 'SPA',
+                    },
+                    {
+                        text: 'JPN',
+                        value: 'JPN',
+                    },
+                    {
+                        text: 'RUS',
+                        value: 'RUS',
+                    },
+                    {
+                        text: 'HEB',
+                        value: 'HEB',
+                    },
+                    {
+                        text: 'HIN',
+                        value: 'HIN',
+                    },
+                    {
+                        text: 'CMN',
+                        value: 'CMN',
                     },
                 ],
                 selectedLanguageFilters: [],
@@ -169,7 +197,9 @@
         methods: {
             findSynonymsByKeyword() {
                 this.tableItems = [{keyword: "No data", count: ""}];
-                const url = 'https://amz-keyword-api.herokuapp.com'
+                // const url = 'https://amz-keyword-api.herokuapp.com'
+                const url = 'http://localhost:8181'
+
                 const domainFiltersParam = this.selectedDomainFilters.length ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
                 const langFiltersParam = this.selectedLanguageFilters.length ? `&lang-filters=${this.selectedLanguageFilters.join(',')}` : ''
                 axios.get(`${url}/api/synonyms/${this.keyword}?page=${this.currentPage-1}&size=${this.perPage}${domainFiltersParam}${langFiltersParam}`)
