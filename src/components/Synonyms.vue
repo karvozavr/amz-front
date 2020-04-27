@@ -197,8 +197,8 @@
         methods: {
             findSynonymsByKeyword() {
                 this.tableItems = [{keyword: "No data", count: ""}];
-                // const url = 'https://amz-keyword-api.herokuapp.com'
-                const url = 'http://localhost:8181'
+                const url = 'https://amz-keyword-api.herokuapp.com'
+                // const url = 'http://localhost:8181'
 
                 const domainFiltersParam = this.selectedDomainFilters.length ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
                 const langFiltersParam = this.selectedLanguageFilters.length ? `&lang-filters=${this.selectedLanguageFilters.join(',')}` : ''
@@ -221,6 +221,10 @@
 
             clearDomainFilters() {
                 this.selectedDomainFilters = []
+            },
+
+            clearLanguageFilters() {
+                this.selectedLanguageFilters = []
             },
         }
     }
