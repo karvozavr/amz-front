@@ -166,7 +166,7 @@
                         text: 'SPA',
                         value: 'SPA',
                     },
-                    {
+                    /*{
                         text: 'JPN',
                         value: 'JPN',
                     },
@@ -185,7 +185,7 @@
                     {
                         text: 'CMN',
                         value: 'CMN',
-                    },
+                    },*/
                 ],
                 selectedLanguageFilters: [],
                 currentPage: 1,
