@@ -19,7 +19,7 @@
                         </b-form-checkbox-group>
                     </b-dropdown>
 
-                    <b-button variant="success" @click="findSynonymsByKeyword">
+                    <b-button variant="success" @click="findRelatedKeywords">
                         <b-icon-search icon="search-circle-fill"></b-icon-search>
                         Search
                     </b-button>
@@ -34,7 +34,7 @@
                         :total-rows="rows"
                         :per-page="perPage"
                         aria-controls="main-table"
-                        @input="findSynonymsByKeyword"
+                        @input="findRelatedKeywords"
                 ></b-pagination>
             </div>
         </b-row>
@@ -142,7 +142,7 @@
         },
 
         methods: {
-            findSynonymsByKeyword() {
+            findRelatedKeywords() {
                 this.tableItems = [{keyword: "No data", count: ""}];
                 // const url = 'https://amz-keyword-api.herokuapp.com'
                 const url = 'http://198.211.98.28:8082'
