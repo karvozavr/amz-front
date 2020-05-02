@@ -144,10 +144,10 @@
         methods: {
             findRelatedKeywords() {
                 this.tableItems = [{keyword: "No data", count: ""}];
-                // const url = 'https://amz-keyword-api.herokuapp.com'
+                // const url = 'http://localhost:8181'
                 const url = 'http://198.211.98.28:8082'
                 const domainFiltersParam = this.selectedDomainFilters.length ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
-                let apiQuery = `${url}/api/synonyms/${this.keyword}?page=${this.currentPage - 1}&size=${this.perPage}${domainFiltersParam}`;
+                let apiQuery = `${url}/api/keyword/${this.keyword}?page=${this.currentPage - 1}&size=${this.perPage}${domainFiltersParam}`;
                 axios.get(apiQuery)
                     .then(response => {
                         this.rows = response.data.totalElements;
