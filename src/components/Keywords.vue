@@ -145,8 +145,7 @@
             findSynonymsByKeyword() {
                 this.tableItems = [{keyword: "No data", count: ""}];
                 // const url = 'https://amz-keyword-api.herokuapp.com'
-                const url = 'http://localhost:8181'
-
+                const url = 'http://198.211.98.28:8082'
                 const domainFiltersParam = this.selectedDomainFilters.length ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
                 axios.get(`${url}/api/synonyms/${this.keyword}?page=${this.currentPage - 1}&size=${this.perPage}${domainFiltersParam}`)
                     .then(response => {
