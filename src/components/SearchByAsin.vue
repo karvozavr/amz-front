@@ -33,7 +33,6 @@
                         :total-rows="rows"
                         :per-page="perPage"
                         aria-controls="main-table"
-                        align="center"
                         @input="findByAsin"
                 ></b-pagination>
             </div>
@@ -142,7 +141,7 @@
         methods: {
             findByAsin() {
                 this.tableItems = [{keyword: "Нет данных", count: ""}];
-                // const url = 'https://amz-keyword-api.herokuapp.com'
+                //const url = 'http://localhost:8181'
                 const url = 'http://198.211.98.28:8082'
                 const filterParam = this.selectedDomainFilters ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
                 axios.get(`${url}/api/asin/${this.asin}?page=${this.currentPage-1}&size=${this.perPage}${filterParam}`)
