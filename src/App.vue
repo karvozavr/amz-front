@@ -4,7 +4,7 @@
             <router-link class="nav-link" to="/asin">ASIN</router-link>
             <router-link class="nav-link" to="/keywords">KEYWORDS</router-link>
             <router-link class="nav-link" to="/keywords_new">KEYWORDS_NEW</router-link>
-<!--            <router-link class="nav-link" to="/synonyms">SYNONYMS</router-link>-->
+            <router-link class="nav-link" to="/metrics">METRICS</router-link>
         </div>
         <router-view/>
     </div>

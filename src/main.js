@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import cors from 'cors';
 import KeywordsNew from "./components/KeywordsNew";
+import Metrics from "./components/Metrics";
 
 Vue.config.productionTip = false
 Vue.use(Router)
@@ -16,6 +17,7 @@ const routes = [
   {path: '/asin', component: SearchByAsin},
   {path: '/keywords', component: Keywords},
   {path: '/keywords_new', component: KeywordsNew},
+  {path: '/metrics', component: Metrics},
 ];
 const router = new Router({routes,  mode: 'history'})
 
