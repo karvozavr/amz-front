@@ -77,15 +77,15 @@
                 asin: '',
                 tableItems: [
                     {
-                        keyword: "N/A",
-                        cpr8days: "N/A",
-                        ppc: "N/A",
-                        source: "N/A",
-                        amazonRecomed: "N/A",
-                        sponsoredRank: "N/A",
-                        organicRank: "N/A",
-                        competingProducts: "N/A",
-                        headlineASINs: "N/A",
+                        keyword: "Search for asin",
+                        cpr8days: "",
+                        ppc: "",
+                        source: "",
+                        amazonRecomed: "",
+                        sponsoredRank: "",
+                        organicRank: "",
+                        competingProducts: "",
+                        headlineASINs: "",
                     }
                 ],
                 fields:
@@ -125,15 +125,17 @@
         methods: {
             findByAsin() {
                 this.tableItems = [{keyword: "Нет данных", count: ""}];
-                //const url = 'http://localhost:8181'
-                const url = 'http://198.211.98.28:8082'
+                const url = 'http://localhost:8181'
+                // const url = 'http://198.211.98.28:8082'
                 const filterParam = this.selectedDomainFilters ? `&domain-filters=${this.selectedDomainFilters.join(',')}` : ''
-                axios.get(`${url}/api/asin/${this.asin}?page=${this.currentPage - 1}&size=${this.perPage}${filterParam}`)
+                axios.get(`${url}/api/metrics/asin/${this.asin}?page=${this.currentPage - 1}&size=${this.perPage}${filterParam}`)
                     .then(response => {
                         this.rows = response.data.totalElements;
 
                         if (this.rows > 0) {
+                            console.log(response.data.content)
                             this.tableItems = response.data.content;
+                            this.tableItems.forEach(item => item.ppc = item.ppc ? item.ppc : 'N/A')
                         } else {
                             this.tableItems = [{keyword: 'No results found', count: ''}];
                         }
